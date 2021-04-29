@@ -1,0 +1,56 @@
+.navbar {
+    background-color: white;
+}
+.navbar-toggler {
+    margin-top: 0px;
+    border-radius: 0;
+    height: 30px;
+    width: 30px;
+    padding: 2px;
+    outline: none !important;
+    box-shadow: none;
+}
+.navbar-toggler:active .plusSign {
+    transform: rotate(45deg); 
+    -webkit-transform: rotate(45deg); 
+    -ms-transform: rotate(45deg);
+    outline: none !important;
+    box-shadow: none;
+    }
+
+
+.navLink {
+    color: black;
+    text-align: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 19px;
+    letter-spacing: 1px;
+    padding: 0.2px 15px;
+}
+
+.navbar-brand {
+    margin: 10px;
+    background-color:white !important;
+    color: black !important;
+    text-align: center;
+    font-weight: 500;
+    font-size: xx-large;
+    letter-spacing: 1px;
+    padding-top: .5px!important;
+    padding-bottom: .5px!important;
+}
+
+.active, .navLink:hover {
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+} 
+
+@media (max-width: 540px) {
+    .navbar-brand{margin-top: 5px;
+        margin-bottom: 5px;
+        margin-left:20px}
+}

@@ -1,8 +1,8 @@
 import React from "react";
 import "../style/home.css";
-// import HomeCards from "../Components/homeCards";
-// import Subscribe from "../Components/subscribe";
-// import Video from "../Components/video";
+import HomeCards from "../Components/homeCards";
+import Subscribe from "../Components/Subscribe";
+import Video from "../Components/Video";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -10,18 +10,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Home() {
     return (
-        <div> Home Page
+        <div>
             <div class="container-fluid">
-                {/* <Video /> */}
+                <Video />
             </div>
             <br />
             <br />
             <br />
             <br />
-            {/* <HomeCards /> */}
+            <HomeCards />
             <br />
 
-            {/* <Subscribe /> */}
+            <Subscribe />
             <br />
         </div>
 

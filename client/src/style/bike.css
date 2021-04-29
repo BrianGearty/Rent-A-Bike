@@ -1,0 +1,43 @@
+.bikeStyleText {
+    color: white;
+}
+
+.edu-card-body {
+    background-color: black;
+}
+
+.bg-dark {
+    margin: 25px;
+}
+
+.bikeHeader {
+    font-family: 'Barlow Condensed';
+    font-size: 80px;
+    font-weight: 600;
+    background-color: transparent;
+    color: black;
+    text-align: center;
+}
+
+.bikeName {
+    font-family: 'Barlow Condensed';
+    font-size: 40px;
+    background-color: transparent;
+    color: white;
+    text-align: center;
+    background-color: black;
+}
+
+.leaf-accordion-bullet-point {
+    width: 1000px;
+}
+
+.bikePrice {
+    color: white;
+    text-align: center;
+}
+
+.bikeTableHeader {
+    color: white;
+    text-align: center;
+}

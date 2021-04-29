@@ -1,0 +1,58 @@
+.card {
+    border: 1px black solid;
+}
+
+.card-header {
+    background-color: black;
+    color: whitesmoke;
+}
+
+.form-control {
+    border: 1px black solid;
+}
+
+.form-check {
+    display: block;
+    margin: 10px 0px 10px 0px;
+}
+
+#bikeType {
+    border: 1px black solid;
+}
+
+.endDate {
+    margin: 10px 13px 10px 0px;
+}
+
+.startDate{
+    margin: 10px 5px 0px 0px;
+}
+
+.bikeInfoForm {
+    margin-top: 50px;
+}
+
+
+.rentalForms {
+margin: 50px auto;
+}
+
+.formSubmit {
+    font-family: "Barlow Condensed";
+    border-radius: 25px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: 1px;
+    border: 4px black solid;
+    padding: 8px;
+    margin: 10px;
+}
+
+.formSubmit:hover {
+    background-color: white;
+    color: black;
+    text-decoration: none;
+}

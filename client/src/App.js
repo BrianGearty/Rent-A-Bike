@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Home from "./Pages/Home";
+import Register from "./Pages/Register";
+// import DataDisplay from "./Pages/DataDisplay";
+import About from "./Pages/About";
+import Contact from "./Pages/Contact";
+import Bike from "./Pages/Bikes";
+
+import Nav from "./Components/Nav";
+import Footer from "./Components/Footer";
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+    <Nav />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/register" component={Register} />
+            {/* <Route exact path="/datadisplay" component={DataDisplay} /> */}
+            <Route exact path="/bike" component={Bike} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/contact" component={Contact} />
+          </Switch>
+    <Footer />
+    </Router>
+      </div>
   );
 }
+
+
 
 export default App;
