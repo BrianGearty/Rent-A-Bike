@@ -1,0 +1,42 @@
+{
+    "paths": [
+        {
+            "name": "/api/register",
+            "lambdaFunction": "rentalFormFunction",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            },
+            "policyResourceName": "/api/register"
+        }
+    ],
+    "resourceName": "rentalFormAPI",
+    "apiName": "rentalFormAPI",
+    "functionArns": [
+        {
+            "lambdaFunction": "rentalFormFunction"
+        }
+    ],
+    "privacy": {
+        "auth": 1,
+        "unauth": 0,
+        "authRoleName": "amplify-rentabikenj-dev-115935-authRole",
+        "unAuthRoleName": "amplify-rentabikenj-dev-115935-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "rentalFormFunction",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}

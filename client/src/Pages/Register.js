@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import Amplify, {API} from 'aws-amplify';
 import DatePicker from "react-datepicker";
 import 'react-datepicker/dist/react-datepicker.css';
 import '../style/register.css';
@@ -37,30 +38,29 @@ function Register() {
         setBikeType(event.target.value)
     }
 
-    // SUBMIT ENTIRE FORM TO DB
-    const handleSubmit = () => {
-        const requestOptions = {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
+    // SUBMIT ENTIRE FORM TO DB 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        API.post('rentalFormAPI', '/api/register', {
+            body: {
                 name: name,
                 email: email,
                 phoneNumber: phoneNumber,
                 dropOff: dropOff,
-                selectedStartDate: selectedStartDate,
+                selectedStartDate: selectedStartDate, 
                 selectedEndDate: selectedEndDate,
                 bikeType: bikeType
-            })
-        }
-        //  API TO PUSH FORM INFO TO DB
-        fetch("/api/register", requestOptions)
-            .then((response) => {
-                console.log(response)
-                response.json();
-            }).catch(err => {
-                console.log(err)
-            })
+            }
+        })
+        
     }
+
+    useEffect(() => {
+        API.get('rentalFormAPI', "/api/register/name")
+        .then(dbRes => console.log(dbRes))
+    }, [])
+
     return (
         <div className="container rentalForms">
             <div className="card card-text">
@@ -82,7 +82,7 @@ function Register() {
                     </div>
                     <div className="form-group">
                         <label >Drop Off Location (Street Address, City)</label>
-                        <input required onChange={dropOffUpdate} type="dropOff" className="form-control" id="phone" placeholder="Address" name="phone"></input>
+                        <input required onChange={dropOffUpdate} type="dropOff" className="form-control" id="dropOff" placeholder="Address" name="phone"></input>
                     </div>
                 </div>
             </div>
@@ -91,12 +91,12 @@ function Register() {
                     Bike Information</h4>
                 <div className="card-body">
                     <div className="form-check electricRadioBtn">
-                        <input onChange={bikeUpdate} checked={bikeType === 'Electric Bike'} className="form-check-input" type="checkbox" value="Electric Bike" id="bikeTypeRadioBtn"></input>
+                        <input onChange={bikeUpdate} checked={bikeType === 'Electric Bike'} className="form-check-input" type="checkbox" value="Electric Bike" id="electricBikeRadioBtn"></input>
                         <label className="form-check-label">
                             Electric Bike</label>
                     </div>
                     <div className="form-check traditionanlRadioBtn">
-                        <input onChange={bikeUpdate} checked={bikeType === 'Traditional Bike'} className="form-check-input" type="checkbox" value="Traditional Bike" id="bikeTypeRadioBtn"></input>
+                        <input onChange={bikeUpdate} checked={bikeType === 'Traditional Bike'} className="form-check-input" type="checkbox" value="Traditional Bike" id="regularBikeRadioBtn"></input>
                         <label className="form-check-label">
                             Traditional Bike</label>
                     </div>

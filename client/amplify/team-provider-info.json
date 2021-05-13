@@ -1,0 +1,26 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-rentabikenj-dev-115935-authRole",
+      "UnauthRoleArn": "arn:aws:iam::832193294451:role/amplify-rentabikenj-dev-115935-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::832193294451:role/amplify-rentabikenj-dev-115935-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-rentabikenj-dev-115935-deployment",
+      "UnauthRoleName": "amplify-rentabikenj-dev-115935-unauthRole",
+      "StackName": "amplify-rentabikenj-dev-115935",
+      "StackId": "arn:aws:cloudformation:us-east-1:832193294451:stack/amplify-rentabikenj-dev-115935/10bff4f0-b33b-11eb-9e17-1212f512cf43",
+      "AmplifyAppId": "d2e0brld4sdkbf"
+    },
+    "categories": {
+      "auth": {
+        "rentabikenj4d08b906": {}
+      },
+      "function": {
+        "rentalFormFunction": {
+          "deploymentBucketName": "amplify-rentabikenj-dev-115935-deployment",
+          "s3Key": "amplify-builds/rentalFormFunction-6373567641417a385a53-build.zip"
+        }
+      }
+    }
+  }
+}
