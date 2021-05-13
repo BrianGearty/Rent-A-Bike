@@ -1,7 +1,7 @@
 
 import React from "react";
 import Amplify from "aws-amplify"
-import config from './aws-exports'
+// import config from './aws-exports'
 import {withAuthenticator, AmplifySignOut} from "@aws-amplify/ui-react"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -15,7 +15,8 @@ import Bike from "./Pages/Bikes";
 import Nav from "./Components/Nav";
 import Footer from "./Components/Footer";
 
-Amplify.configure(config)
+// Amplify.configure(config)
+// console.log(config)
 
 function App() {
   return (
