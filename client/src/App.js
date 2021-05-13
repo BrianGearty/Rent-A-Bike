@@ -15,8 +15,8 @@ import Bike from "./Pages/Bikes";
 import Nav from "./Components/Nav";
 import Footer from "./Components/Footer";
 
-// Amplify.configure(config)
-// console.log(config)
+Amplify.configure(config)
+
 
 function App() {
   return (
