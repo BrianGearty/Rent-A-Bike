@@ -34,7 +34,7 @@ function App() {
           </Switch>
     <Footer />
     </Router>
-    {/* <AmplifySignOut /> */}
+    
       </div>
   );
 }
