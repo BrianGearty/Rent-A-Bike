@@ -18,6 +18,7 @@ import Footer from "./Components/Footer";
 Amplify.configure(config)
 
 
+
 function App() {
   return (
     <div className="App">
