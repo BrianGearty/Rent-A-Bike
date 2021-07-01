@@ -7,7 +7,6 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from "./Pages/Home";
 import Register from "./Pages/Register";
-// import DataDisplay from "./Pages/DataDisplay";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Bike from "./Pages/Bikes";
