@@ -18,9 +18,6 @@ function Navigation() {
                     <li className="nav-item">
                         <NavLink className="navLink" data-toggle="collapse" data-target=".navbar-collapse.show" to="/register">REGISTER</NavLink>
                     </li>
-                    <li className="nav-item ">
-                        <NavLink className="navLink" data-toggle="collapse" data-target=".navbar-collapse.show" to="/datadisplay">DATA DISPLAY</NavLink>
-                    </li>
                     <li className="nav-item">
                         <NavLink className="navLink" data-toggle="collapse" data-target=".navbar-collapse.show" to="/bike">BIKES</NavLink>
                     </li>

@@ -3,6 +3,7 @@ import React from "react";
 import Amplify from "aws-amplify"
 import config from './aws-exports'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+// import {withAuthenticator, AmplifySignOut} from "@aws-amplify/ui-react"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from "./Pages/Home";
 import Register from "./Pages/Register";
@@ -30,6 +31,7 @@ function App() {
           </Switch>
     <Footer />
     </Router>
+    {/* <AmplifySignOut /> */}
       </div>
   );
 }

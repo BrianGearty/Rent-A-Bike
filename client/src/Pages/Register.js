@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Amplify, {API} from 'aws-amplify';
+import Amplify, { API } from 'aws-amplify';
 import DatePicker from "react-datepicker";
 import 'react-datepicker/dist/react-datepicker.css';
 import '../style/register.css';
@@ -42,31 +42,60 @@ function Register() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        API.post('rentalFormAPI', '/api/register', {
+                // API.post('rentalFormAPI', '/api/register', {
+
+                //     body: {
+                //         name: name,
+                //         email: email,
+                //         phoneNumber: phoneNumber,
+                //         dropOff: dropOff,
+                //         selectedStartDate: selectedStartDate,
+                //         selectedEndDate: selectedEndDate,
+                //         bikeType: bikeType
+                //     }
+                // }).catch((err) => {
+                //     console.log("API AMPLIFY ERROR", err.response);
+                // })
+
+        const apiName = 'rentalFormAPI'; // replace this with your api name.
+        const path = '/api/register'; //replace this with the path you have configured on your API
+        const myInit = {
             body: {
                 name: name,
                 email: email,
                 phoneNumber: phoneNumber,
                 dropOff: dropOff,
-                selectedStartDate: selectedStartDate, 
+                selectedStartDate: selectedStartDate,
                 selectedEndDate: selectedEndDate,
                 bikeType: bikeType
-            }
-        })
-        
+            },
+            headers: {}, // OPTIONAL
+        };
+
+        API
+            .post(apiName, path, myInit)
+            .then(response => {
+                console.log(response)
+                // Add your code here
+            })
+            .catch(error => {
+                console.log(error.response);
+            });
+
     }
 
-    useEffect(() => {
-        API.get('rentalFormAPI', "/api/register/name")
-        .then(dbRes => console.log(dbRes))
-    }, [])
+
+    // useEffect(() => {
+    //     API.get('rentalFormAPI', "/api/register/name")
+    //     .then(dbRes => console.log(dbRes))
+    // }, [])
 
     return (
         <div className="container rentalForms">
             <div className="card card-text">
                 <h4 className="card-header rental">
                     Rental Form
-            </h4>
+                </h4>
                 <div className="card-body">
                     <div className="form-group">
                         <label>Name</label>
@@ -108,16 +137,16 @@ function Register() {
                                 isClearable
                             />
                         </div>
-                    <div className="endDate">
-                        <label className="endDate">Rental End Date</label>
-                        <DatePicker selected={selectedEndDate} onChange={date => setSelectedEndDate(date)}
-                            minDate={selectedStartDate}
-                            isClearable
+                        <div className="endDate">
+                            <label className="endDate">Rental End Date</label>
+                            <DatePicker selected={selectedEndDate} onChange={date => setSelectedEndDate(date)}
+                                minDate={selectedStartDate}
+                                isClearable
                             />
-                            </div>
+                        </div>
                     </div>
                 </div>
-            <button onClick={handleSubmit} type="submit" className="formSubmit btn-sml">Rent A Bike!</button>
+                <button onClick={handleSubmit} type="submit" className="formSubmit btn-sml">Rent A Bike!</button>
             </div>
         </div>
     )
@@ -126,3 +155,5 @@ function Register() {
 
 
 export default Register;
+
+
