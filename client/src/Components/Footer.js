@@ -52,8 +52,6 @@ function Footer() {
                     </div>
                     <NavLink className="navLink footerNav" to="/register">REGISTER</NavLink>
 
-                    <NavLink className="navLink footerNav" to="/datadisplay">DATA DISPLAY</NavLink>
-
                     <NavLink className="navLink footerNav" to="/about">ABOUT US</NavLink>
 
                     <NavLink className="navLink footerNav" to="/contact">CONTACT</NavLink>

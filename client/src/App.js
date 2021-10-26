@@ -10,9 +10,11 @@ import Register from "./Pages/Register";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Bike from "./Pages/Bikes";
+import Payment from "./Components/payment"
 
 import Nav from "./Components/Nav";
 import Footer from "./Components/Footer";
+require('dotenv').config();
 
 // Amplify.configure(config)
 
@@ -28,6 +30,7 @@ function App() {
             <Route exact path="/bike" component={Bike} />
             <Route exact path="/about" component={About} />
             <Route exact path="/contact" component={Contact} />
+            <Route exact path="/payment/:total" component={Payment} />
           </Switch>
     <Footer />
     </Router>

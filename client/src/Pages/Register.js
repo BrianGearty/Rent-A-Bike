@@ -1,31 +1,31 @@
-import React, { useState, useEffect } from "react";
-import Amplify, { API } from 'aws-amplify';
+import React, { useState } from "react";
+import { API } from 'aws-amplify';
 import DatePicker from "react-datepicker";
 import 'react-datepicker/dist/react-datepicker.css';
 import '../style/register.css';
-
+import { useHistory } from "react-router-dom";
 // import './style.css';
 
 
-
 function Register() {
+    let history = useHistory();
     // USER NAME
-    const [name, setName] = useState(null)
+    const [name, setName] = useState("")
     const nameUpdate = (event) => {
         setName(event.target.value)
     }
     // USER EMAIL
-    const [email, setEmail] = useState(null)
+    const [email, setEmail] = useState("")
     const emailUpdate = (event) => {
         setEmail(event.target.value)
     }
     // USER PHONE NUMBER
-    const [phoneNumber, setPhoneNumber] = useState(null)
+    const [phoneNumber, setPhoneNumber] = useState("")
     const phoneNumberUpdate = (event) => {
         setPhoneNumber(event.target.value)
     }
     // TAKES DROP OFF LOCATION
-    const [dropOff, setDropOff] = useState(null)
+    const [dropOff, setDropOff] = useState("")
     const dropOffUpdate = (event) => {
         setDropOff(event.target.value)
     }
@@ -42,23 +42,8 @@ function Register() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-                // API.post('rentalFormAPI', '/api/register', {
-
-                //     body: {
-                //         name: name,
-                //         email: email,
-                //         phoneNumber: phoneNumber,
-                //         dropOff: dropOff,
-                //         selectedStartDate: selectedStartDate,
-                //         selectedEndDate: selectedEndDate,
-                //         bikeType: bikeType
-                //     }
-                // }).catch((err) => {
-                //     console.log("API AMPLIFY ERROR", err.response);
-                // })
-
-        const apiName = 'rentalFormAPI'; // replace this with your api name.
-        const path = '/api/register'; //replace this with the path you have configured on your API
+        const apiName = 'rentalFormAPI';
+        const path = '/api/register'; 
         const myInit = {
             body: {
                 name: name,
@@ -68,27 +53,31 @@ function Register() {
                 selectedStartDate: selectedStartDate,
                 selectedEndDate: selectedEndDate,
                 bikeType: bikeType
-            },
-            headers: {}, // OPTIONAL
+            }
         };
 
         API
             .post(apiName, path, myInit)
             .then(response => {
-                console.log(response)
-                // Add your code here
-            })
+            console.log(response)
+            }).then(
+                // clearing form/resetting state after form submits
+                setName(''),
+                setEmail(''),
+                setPhoneNumber(''),
+                setDropOff(''),
+                setSelectedStartDate(null),
+                setSelectedEndDate(null),
+                setBikeType(null)
+            )
             .catch(error => {
                 console.log(error.response);
             });
 
+            history.push(`/payment/500`)
     }
 
 
-    // useEffect(() => {
-    //     API.get('rentalFormAPI', "/api/register/name")
-    //     .then(dbRes => console.log(dbRes))
-    // }, [])
 
     return (
         <div className="container rentalForms">
@@ -99,19 +88,19 @@ function Register() {
                 <div className="card-body">
                     <div className="form-group">
                         <label>Name</label>
-                        <input required onChange={nameUpdate} type="text" className="form-control" id="name" placeholder="Name" name="name"></input>
+                        <input required onChange={nameUpdate} type="text" value={name} className="form-control" id="name" placeholder="Name" name="name"></input>
                     </div>
                     <div className="form-group">
                         <label >Email</label>
-                        <input required onChange={emailUpdate} type="email" className="form-control" id="email" placeholder="Email" name="email"></input>
+                        <input required onChange={emailUpdate} type="email" value={email} className="form-control" id="email" placeholder="Email" name="email"></input>
                     </div>
                     <div className="form-group">
                         <label >Phone Number</label>
-                        <input required onChange={phoneNumberUpdate} type="phone" className="form-control" id="phone" placeholder="Phone Number" name="phone"></input>
+                        <input required onChange={phoneNumberUpdate} type="phone" value={phoneNumber} className="form-control" id="phone" placeholder="Phone Number" name="phone"></input>
                     </div>
                     <div className="form-group">
                         <label >Drop Off Location (Street Address, City)</label>
-                        <input required onChange={dropOffUpdate} type="dropOff" className="form-control" id="dropOff" placeholder="Address" name="phone"></input>
+                        <input required onChange={dropOffUpdate} type="dropOff" value={dropOff} className="form-control" id="dropOff" placeholder="Address" name="phone"></input>
                     </div>
                 </div>
             </div>
@@ -120,14 +109,24 @@ function Register() {
                     Bike Information</h4>
                 <div className="card-body">
                     <div className="form-check electricRadioBtn">
-                        <input onChange={bikeUpdate} checked={bikeType === 'Electric Bike'} className="form-check-input" type="checkbox" value="Electric Bike" id="electricBikeRadioBtn"></input>
+                        <input onChange={bikeUpdate} checked={bikeType === 'super73'} className="form-check-input" type="checkbox" value="super73" id="electricBikeRadioBtn"></input>
                         <label className="form-check-label">
-                            Electric Bike</label>
+                            Super 73 ZX Electric Bike</label>
+                    </div>
+                    <div className="form-check electricRadioBtn">
+                        <input onChange={bikeUpdate} checked={bikeType === 'crewDart'} className="form-check-input" type="checkbox" value="crewDart" id="electricBikeRadioBtn"></input>
+                        <label className="form-check-label">
+                            Crew Dart Electric Bike</label>
+                    </div>
+                    <div className="form-check electricRadioBtn">
+                        <input onChange={bikeUpdate} checked={bikeType === 'radPower'} className="form-check-input" type="checkbox" value="radPower" id="electricBikeRadioBtn"></input>
+                        <label className="form-check-label">
+                            RadRunner Utility Electric Bike</label>
                     </div>
                     <div className="form-check traditionanlRadioBtn">
-                        <input onChange={bikeUpdate} checked={bikeType === 'Traditional Bike'} className="form-check-input" type="checkbox" value="Traditional Bike" id="regularBikeRadioBtn"></input>
+                        <input onChange={bikeUpdate} checked={bikeType === 'sunCruiser'} className="form-check-input" type="checkbox" value="sunCruiser" id="regularBikeRadioBtn"></input>
                         <label className="form-check-label">
-                            Traditional Bike</label>
+                            Sun Beach Cruiser</label>
                     </div>
                     <div className="form-group">
                         <div className="startDate">

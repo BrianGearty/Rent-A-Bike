@@ -54,7 +54,7 @@ body {
 .figure-caption {
     font-family: 'Barlow Condensed';
     color: white;
-    font-size: 30px;
+    font-size: 20px;
     margin: 15px;
     text-align: center;
     padding: 35px;
@@ -93,7 +93,7 @@ position: relative;
 
 
 .text {
-    font-size: 38px;
+    font-size: 28px;
     font-weight: 600;
     background-color: transparent;
     color: white;
@@ -107,7 +107,7 @@ position: relative;
 .iconCaption {
     font-family: 'Barlow Condensed';
     color: white;
-    font-size: 30px;
+    font-size: 20px;
     margin: 15px;
     display: block;
     text-align: center !important;

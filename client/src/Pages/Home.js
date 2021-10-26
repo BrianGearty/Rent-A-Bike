@@ -11,7 +11,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function Home() {
     return (
         <div>
-            <div class="container-fluid">
+            <div className="container-fluid">
                 <Video />
             </div>
             <br />

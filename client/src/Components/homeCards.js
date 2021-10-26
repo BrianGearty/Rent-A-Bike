@@ -5,35 +5,35 @@ function homeCards() {
 
     return (
         <div>
-            <div class="container-fluid text-center">
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="card-block px-2">
-                            <p class="card-text">Weve got electric bikes.</p>
+            <div className="container-fluid text-center">
+                <div className="row">
+                    <div className="col-md-3">
+                        <div className="card-block px-2">
+                            <p className="card-text">Weve got electric bikes.</p>
                         </div>
                     </div>
-                    <div class="col-lg-6">
+                    <div className="col-lg-6">
                         <img src="/images/rentBike.svg" className="img-fluid" alt="pic"></img>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-3"></div>
-                    <div class="col-lg-6">
+                <div className="row">
+                    <div className="col-md-3"></div>
+                    <div className="col-lg-6">
                         <img src="/images/rentBike.svg" className="img-fluid missionPics" alt="pic"></img>
                     </div>
-                    <div class="col-md-3">
-                        <div class="card-block px-2">
-                            <p class="card-text-2">Weve got traditional beach cruisers</p>
+                    <div className="col-md-3">
+                        <div className="card-block px-2">
+                            <p className="card-text-2">Weve got traditional beach cruisers</p>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="card-block px-2">
-                            <p class="card-text">We drop them off to you and when you're done we pick them up.</p>
+                <div className="row">
+                    <div className="col-md-3">
+                        <div className="card-block px-2">
+                            <p className="card-text">We drop them off to you and when you're done we pick them up.</p>
                         </div>
                     </div>
-                    <div class="col-lg-6">
+                    <div className="col-lg-6">
                         <img src="/images/rentBike.svg" className="img-fluid" alt="pic"></img>
                     </div>
                 </div>
